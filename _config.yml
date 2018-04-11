@@ -4,7 +4,7 @@ url: http://www.sallyjin.com
 theme: next
 title: 金老师的知识花园
 author: sally.jin
-language: zh
+language: zh-Hans
 deploy:
   type: git
   repo: git@github.com:terryzhu/terryzhu.github.io.git
