@@ -26,10 +26,14 @@ document.getElementById("result1").innerHTML=theday.getFullYear()+"年"+(1+theda
 function calb()
 {
  
-y2=parseInt(document.getElementById("SY2").value);
-m2=parseInt(document.getElementById("SM2").value);
-d2=parseInt(document.getElementById("SD2").value);
- 
+s=document.getElementById("SY0").value;
+if (s.length!=8){
+document.getElementById("result2").innerHTML= "格式不对,请输入20120304";
+return
+}
+y2 =parseInt( s.substr(0,4))
+m2 = parseInt(s.substr(4,2))
+
  
 y3=parseInt(document.getElementById("SY3").value);
 m3=parseInt(document.getElementById("SM3").value);
@@ -38,10 +42,7 @@ d3=parseInt(document.getElementById("SD3").value);
 x = y3*12+m3 - (y2*12+m2)
  
  
-day2=new Date(y2,m2-1,d2);
-day3=new Date(y3,m3-1,d3);
- 
-document.getElementById("result2").innerHTML= Math.round(x/12) +"年"+Math.abs(x%12)+"月";
+document.getElementById("result2").innerHTML= Math.trunc(x/12) +"年"+Math.abs(x%12)+"月";
  
  
 }
